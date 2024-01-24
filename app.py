@@ -14,7 +14,6 @@ ENTRY_FONT_WIN =  ("Open Sans", 18, 'bold')
 BUTTON_HEIGHT = 18
 BUTTON_WIDTH = 90
 
-
 class App(ctk.CTk):
     def __init__(self):
         super().__init__()
