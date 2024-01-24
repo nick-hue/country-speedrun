@@ -121,7 +121,6 @@ class App(ctk.CTk):
             entry.delete(0, END)
             entry.configure(state=DISABLED, text_color="#DCE4EE")
             
-
     def update_timer(self):
         if self.running:
             elapsed_time = int(time.time()) - self.start_time
@@ -130,12 +129,9 @@ class App(ctk.CTk):
             self.timer_label.configure(text=time_str)
             self.after(1000, self.update_timer)
 
-
-
 if __name__ == "__main__":
     ctk.set_appearance_mode("Dark")
     ctk.set_default_color_theme("blue")
-
 
     app = App()
     app.mainloop()
