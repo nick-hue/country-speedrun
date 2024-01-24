@@ -76,8 +76,8 @@ class App(ctk.CTk):
         self.elapsed_time_before_stop = 0   
 
     def on_type(self, *args):
-        print(f"Traced")
-        print(args)
+        #print(f"Traced")
+        #print(args)
 
         guess = self.entries[int(args[0])].get()
         filtered_countries = [country for country in self.countries if country.startswith(args[1].lower())]
@@ -86,7 +86,7 @@ class App(ctk.CTk):
             self.entries[int(args[0])].configure(state=DISABLED, text_color = "green", font=ENTRY_FONT_WIN)
             self.correct_entries+=1
 
-        if self.correct_entries == 3:
+        if self.correct_entries == 24:
             self.exit_game()
 
     def exit_game(self):
@@ -114,7 +114,8 @@ class App(ctk.CTk):
         self.running = False
         self.timer_label.configure(text="00:00")
         self.elapsed_time_before_stop = 0
-
+        self.correct_entries = 0 
+        
         for entry in self.entries:
             entry.configure(state=NORMAL)
             entry.delete(0, END)
